@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #d32f2f;
+  --primary-dark: #b71c1c;
+  --white: #ffffff;
+  --slate: #475569;
+  --slate-dark: #1e293b;
+}
+
+body {
+  @apply antialiased text-slate-750 bg-white;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus ring for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
