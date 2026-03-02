@@ -45,7 +45,7 @@ export default function Hero() {
               />
             </div>
             <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white p-4 shadow-xl border border-slate-100">
-              <p className="font-display text-2xl font-bold text-primary">8.5</p>
+              <p className="font-display text-2xl font-bold text-primary">7.5</p>
               <p className="text-sm text-slate-600">Avg. Band Score</p>
             </div>
           </div>
