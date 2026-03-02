@@ -167,16 +167,30 @@ export default function ContactPage() {
             </div>
             <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6">
               <h3 className="font-display font-semibold text-slate-850 mb-4">
-                Office Address
+                Our Branches
               </h3>
-              <p className="flex items-start gap-3 text-slate-600">
-                <MapPin size={20} className="shrink-0 text-primary mt-0.5" />
-                123 Education Avenue, Knowledge Park, City
-              </p>
+              <div className="space-y-3 text-slate-600 text-sm">
+                <p className="flex items-start gap-3">
+                  <MapPin size={20} className="shrink-0 text-primary mt-0.5" />
+                  <span>
+                    <span className="font-semibold">Mardan Campus</span>
+                    <br />
+                    College Chowk, near Passport Office, Mardan
+                  </span>
+                </p>
+                <p className="flex items-start gap-3">
+                  <MapPin size={20} className="shrink-0 text-primary mt-0.5" />
+                  <span>
+                    <span className="font-semibold">Peshawar Campus</span>
+                    <br />
+                    Abdara Road, near Excel Learners Academy, Peshawar
+                  </span>
+                </p>
+              </div>
               <p className="mt-3 flex items-center gap-3 text-slate-600">
                 <Phone size={18} className="shrink-0 text-primary" />
-                <a href="tel:+921234567890" className="hover:text-primary transition-colors">
-                  +92 123 4567890
+                <a href="tel:+923078799996" className="hover:text-primary transition-colors">
+                  +92 307 8799996
                 </a>
               </p>
               <p className="mt-2 flex items-center gap-3 text-slate-600">
@@ -187,7 +201,7 @@ export default function ContactPage() {
               </p>
             </div>
             <a
-              href="https://wa.me/921234567890"
+              href="https://wa.me/923078799996"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3.5 font-semibold text-white hover:bg-green-700 transition-colors shadow-md"
