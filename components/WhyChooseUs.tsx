@@ -2,12 +2,12 @@ import { Users, Award, BookMarked, TrendingUp } from "lucide-react";
 
 const stats = [
   {
-    value: "5000+",
+    value: "20,000+",
     label: "Students Trained",
     icon: Users,
   },
   {
-    value: "8.5",
+    value: "7.5",
     label: "Average Band Score",
     icon: Award,
   },

@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/courses", label: "Courses" },
   { href: "/success-gallery", label: "Success Gallery" },
   { href: "/calculator", label: "Calculator" },
@@ -21,9 +23,17 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="font-display text-xl font-bold tracking-tight text-slate-850"
+          className="flex items-center gap-3"
         >
-          Safi <span className="text-primary">IELTS</span> Studio
+          <Image
+            src="/0A60D4C9-2DE3-44B1-B040-0B7E6B5BDD1E.JPG.jpeg"
+            alt="Safi IELTS Studio"
+            width={150}
+            height={40}
+            className="h-8 w-auto sm:h-9"
+            priority
+          />
+          <span className="sr-only">Safi IELTS Studio</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

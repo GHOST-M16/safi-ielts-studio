@@ -1,190 +1,158 @@
-"use client";
-
-import { useState, useMemo } from "react";
-import Link from "next/link";
-import {
-  Clock,
-  FileCheck,
-  Filter,
-  MapPin,
-  Monitor,
-  ArrowRight,
-} from "lucide-react";
-
-const courses = [
-  {
-    id: "academic-power-pack",
-    title: "IELTS Academic Power Pack",
-    duration: "8 weeks",
-    mockTests: 6,
-    price: "PKR 28,000",
-    level: "advanced" as const,
-    format: "online" as const,
-    description:
-      "Intensive preparation for university admissions. Full-length mocks, writing feedback, and speaking practice.",
-  },
-  {
-    id: "general-intensive",
-    title: "General Training Intensive",
-    duration: "6 weeks",
-    mockTests: 4,
-    price: "PKR 22,000",
-    level: "beginner" as const,
-    format: "in-person" as const,
-    description:
-      "Focused on migration and work visas. Real-world tasks and practice tests aligned with General format.",
-  },
-  {
-    id: "speaking-bootcamp",
-    title: "1-on-1 Speaking Boot Camp",
-    duration: "4 weeks",
-    mockTests: 2,
-    price: "PKR 18,000",
-    level: "beginner" as const,
-    format: "online" as const,
-    description:
-      "Personalised speaking sessions with expert tutors. Build fluency and confidence for the speaking test.",
-  },
-];
-
-type LevelFilter = "all" | "beginner" | "advanced";
-type FormatFilter = "all" | "online" | "in-person";
-
 export default function CoursesPage() {
-  const [level, setLevel] = useState<LevelFilter>("all");
-  const [format, setFormat] = useState<FormatFilter>("all");
-
-  const filtered = useMemo(() => {
-    return courses.filter((c) => {
-      if (level !== "all" && c.level !== level) return false;
-      if (format !== "all" && c.format !== format) return false;
-      return true;
-    });
-  }, [level, format]);
+  const courses = [
+    {
+      id: "ielts-academic",
+      title: "IELTS Academic",
+      purpose:
+        "For students aiming to study abroad or pursue professional registration in English-speaking countries.",
+      duration: "2 months",
+      coverage: "All 4 modules – Listening, Reading, Writing, Speaking",
+      mode: "Online & On-Campus",
+      classes: "5 days a week",
+      timings: "8–10 AM | 10–12 AM | 2–4 PM | 4–6 PM | 6–8 PM",
+      fee: "PKR 35,000",
+      details:
+        "Emphasis on academic vocabulary, essay writing, report writing, and exam strategies. Includes mock tests and personalized feedback.",
+    },
+    {
+      id: "ielts-general-training",
+      title: "IELTS General Training",
+      purpose:
+        "For students or professionals planning to migrate, work, or study at secondary education levels in English-speaking countries.",
+      duration: "2 months",
+      coverage: "All 4 modules",
+      mode: "Online & On-Campus",
+      classes: "5 days a week",
+      timings: "8–10 AM | 10–12 AM | 2–4 PM | 4–6 PM | 6–8 PM",
+      fee: "PKR 35,000",
+      details:
+        "Includes letter and report writing, reading comprehension, listening exercises, and speaking practice for daily situations.",
+    },
+    {
+      id: "ielts-life-skills-a1",
+      title: "IELTS Life Skills (A1)",
+      purpose:
+        "For beginners who need to demonstrate basic English proficiency for UK visa and immigration purposes.",
+      duration: "2 months",
+      coverage: "Speaking & Listening",
+      mode: "Online & On-Campus",
+      classes: "5 days a week",
+      timings: "8–10 AM | 10–12 AM | 2–4 PM | 4–6 PM | 6–8 PM",
+      fee: "PKR 35,000",
+      details:
+        "Practice in conversational English, listening comprehension, pronunciation, and role-play exercises to meet Life Skills A1 standards.",
+    },
+    {
+      id: "pte-academic",
+      title: "PTE Academic",
+      purpose:
+        "For students aiming for academic study abroad or professional recognition through a computer-based exam.",
+      duration: "2 months",
+      coverage: "All 4 modules – Speaking & Writing, Reading, Listening",
+      mode: "Online & On-Campus",
+      classes: "5 days a week",
+      timings: "8–10 AM | 10–12 AM | 2–4 PM | 4–6 PM | 6–8 PM",
+      fee: "PKR 35,000",
+      details:
+        "Includes full exam practice, scoring strategies, and module-specific techniques to achieve the target band.",
+    },
+    {
+      id: "pte-core",
+      title: "PTE Core",
+      purpose:
+        "Ideal for students seeking vocational or professional certification, with focus on real-life English and workplace communication.",
+      duration: "2 months",
+      coverage: "All 4 modules",
+      mode: "Online & On-Campus",
+      classes: "5 days a week",
+      timings: "8–10 AM | 10–12 AM | 2–4 PM | 4–6 PM | 6–8 PM",
+      fee: "PKR 35,000",
+      details:
+        "Emphasis on reading, writing, speaking, and listening practice with mock tests and feedback tailored to vocational or professional requirements.",
+    },
+    {
+      id: "ielts-online-live",
+      title: "IELTS Online Live Sessions",
+      purpose:
+        "For students who prefer flexible online learning with interactive live sessions and personalized feedback.",
+      duration: "2 months",
+      coverage: "All 4 modules",
+      mode: "Online Live",
+      classes: "5 days a week",
+      timings: "8–10 AM | 10–12 AM | 2–4 PM | 4–6 PM | 6–8 PM",
+      fee: "PKR 35,000",
+      details:
+        "Includes real-time speaking and writing correction, mock tests, and strategies to improve scores across all modules.",
+    },
+  ];
 
   return (
-    <div className="bg-white min-h-screen">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="mb-10">
+    <main className="bg-white min-h-screen">
+      <section className="border-b border-slate-200 bg-slate-50/60">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <h1 className="font-display text-4xl font-bold text-slate-850 sm:text-5xl">
-            Course Catalog
+            Courses We Offer at Safi IELTS Studio
           </h1>
-          <p className="mt-3 max-w-2xl text-lg text-slate-600">
-            Choose the right programme for your goal. Filter by level and format.
+          <p className="mt-4 max-w-3xl text-lg text-slate-600">
+            We provide a comprehensive range of English proficiency courses
+            designed to help students achieve their goals—whether for higher
+            education, migration, work, or visa requirements.
           </p>
         </div>
+      </section>
 
-        <div className="flex flex-col gap-8 lg:flex-row">
-          {/* Filter sidebar */}
-          <aside className="lg:w-64 shrink-0">
-            <div className="sticky top-24 rounded-2xl border border-slate-200 bg-slate-50/50 p-6">
-              <div className="flex items-center gap-2 text-slate-850 font-semibold">
-                <Filter size={20} />
-                Filter
-              </div>
-              <div className="mt-5 space-y-5">
+      <section>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 space-y-10">
+          {courses.map((course, index) => (
+            <article
+              key={course.id}
+              id={course.id}
+              className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow"
+            >
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between">
                 <div>
-                  <p className="text-sm font-medium text-slate-600 mb-2">
-                    Level
+                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                    {index + 1}. {course.title}
                   </p>
-                  <div className="space-y-2">
-                    {(["all", "beginner", "advanced"] as const).map((opt) => (
-                      <label
-                        key={opt}
-                        className="flex items-center gap-2 cursor-pointer"
-                      >
-                        <input
-                          type="radio"
-                          name="level"
-                          checked={level === opt}
-                          onChange={() => setLevel(opt)}
-                          className="text-primary focus:ring-primary"
-                        />
-                        <span className="text-sm capitalize">
-                          {opt === "all" ? "All levels" : opt}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
+                  <p className="mt-2 text-slate-600">{course.purpose}</p>
                 </div>
-                <div>
-                  <p className="text-sm font-medium text-slate-600 mb-2">
-                    Format
-                  </p>
-                  <div className="space-y-2">
-                    {(["all", "online", "in-person"] as const).map((opt) => (
-                      <label
-                        key={opt}
-                        className="flex items-center gap-2 cursor-pointer"
-                      >
-                        <input
-                          type="radio"
-                          name="format"
-                          checked={format === opt}
-                          onChange={() => setFormat(opt)}
-                          className="text-primary focus:ring-primary"
-                        />
-                        <span className="text-sm capitalize">
-                          {opt === "all" ? "All" : opt}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+                <p className="mt-1 text-base font-semibold text-primary sm:text-lg">
+                  {course.fee}
+                </p>
               </div>
-            </div>
-          </aside>
 
-          {/* Course cards */}
-          <div className="flex-1 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {filtered.map((course, i) => (
-              <div
-                key={course.id}
-                className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 hover:-translate-y-1"
-              >
-                <h2 className="font-display text-xl font-bold text-slate-850">
-                  {course.title}
-                </h2>
-                <p className="mt-2 text-sm text-slate-600">{course.description}</p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                  <li className="flex items-center gap-2">
-                    <Clock size={16} className="text-primary shrink-0" />
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li>
+                    <span className="font-semibold">Duration:</span>{" "}
                     {course.duration}
                   </li>
-                  <li className="flex items-center gap-2">
-                    <FileCheck size={16} className="text-primary shrink-0" />
-                    {course.mockTests} mock tests
+                  <li>
+                    <span className="font-semibold">Coverage:</span>{" "}
+                    {course.coverage}
                   </li>
-                  <li className="flex items-center gap-2">
-                    {course.format === "online" ? (
-                      <Monitor size={16} className="text-primary shrink-0" />
-                    ) : (
-                      <MapPin size={16} className="text-primary shrink-0" />
-                    )}
-                    <span className="capitalize">{course.format}</span>
+                  <li>
+                    <span className="font-semibold">Mode:</span> {course.mode}
                   </li>
                 </ul>
-                <p className="mt-4 font-display text-2xl font-bold text-primary">
-                  {course.price}
-                </p>
-                <Link
-                  href={`/courses#${course.id}`}
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
-                >
-                  View Curriculum
-                  <ArrowRight size={16} />
-                </Link>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li>
+                    <span className="font-semibold">Classes:</span>{" "}
+                    {course.classes}
+                  </li>
+                  <li>
+                    <span className="font-semibold">Timings:</span>{" "}
+                    {course.timings}
+                  </li>
+                </ul>
               </div>
-            ))}
-          </div>
-        </div>
 
-        {filtered.length === 0 && (
-          <p className="text-center text-slate-600 py-12">
-            No courses match the selected filters. Try changing Level or Format.
-          </p>
-        )}
-      </div>
-    </div>
+              <p className="mt-5 text-sm text-slate-700">{course.details}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
+

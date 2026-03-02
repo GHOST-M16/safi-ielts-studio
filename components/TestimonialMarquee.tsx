@@ -55,16 +55,18 @@ export default function TestimonialMarquee() {
           {duplicated.map((t, i) => (
             <div
               key={i}
-              className="inline-flex shrink-0 w-[80vw] max-w-md rounded-2xl bg-slate-800/80 p-6 backdrop-blur sm:w-[400px]"
+              className="inline-flex shrink-0 w-[85vw] min-w-[280px] max-w-[380px] min-h-[200px] flex-col rounded-2xl bg-slate-800/80 p-6 backdrop-blur overflow-hidden"
             >
-              <p className="text-slate-200 leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-              <div className="mt-4 flex items-center justify-between">
-                <span className="font-semibold text-white">{t.name}</span>
-                <span className="rounded-lg bg-primary/20 px-2 py-1 text-sm font-medium text-primary">
+              <p className="text-slate-200 leading-relaxed break-words min-h-0 text-[15px]">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+              <div className="mt-4 flex items-center justify-between gap-2 shrink-0">
+                <span className="font-semibold text-white truncate">{t.name}</span>
+                <span className="rounded-lg bg-primary/20 px-2 py-1 text-sm font-medium text-primary shrink-0">
                   Band {t.band}
                 </span>
               </div>
-              <p className="mt-1 text-xs text-slate-500">{t.course}</p>
+              <p className="mt-1 text-xs text-slate-500 truncate">{t.course}</p>
             </div>
           ))}
         </div>
