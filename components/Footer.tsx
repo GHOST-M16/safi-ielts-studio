@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ComponentType } from "react";
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
 
 const quickLinks = [
@@ -13,7 +14,7 @@ const quickLinks = [
 type SocialLink = {
   href: string;
   label: string;
-  icon: (props: { size?: number }) => JSX.Element;
+  icon: ComponentType<{ size?: number }>;
 };
 
 function TikTokIcon({ size = 20 }: { size?: number }) {
