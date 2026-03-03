@@ -189,9 +189,33 @@ export default function ContactPage() {
               </div>
               <p className="mt-3 flex items-center gap-3 text-slate-600">
                 <Phone size={18} className="shrink-0 text-primary" />
-                <a href="tel:+923078799996" className="hover:text-primary transition-colors">
-                  +92 307 8799996
-                </a>
+                <span>
+                  <a
+                    href="tel:+92937864411"
+                    className="hover:text-primary transition-colors"
+                  >
+                    +92 937 864411
+                  </a>
+                  <br />
+                  <span className="text-xs text-slate-500">
+                    Mardan campus landline
+                  </span>
+                </span>
+              </p>
+              <p className="mt-1 flex items-center gap-3 text-slate-600">
+                <Phone size={18} className="shrink-0 text-primary" />
+                <span>
+                  <a
+                    href="tel:+923078799996"
+                    className="hover:text-primary transition-colors"
+                  >
+                    +92 307 8799996
+                  </a>
+                  <br />
+                  <span className="text-xs text-slate-500">
+                    Peshawar campus WhatsApp / helpline
+                  </span>
+                </span>
               </p>
               <p className="mt-2 flex items-center gap-3 text-slate-600">
                 <Mail size={18} className="shrink-0 text-primary" />

@@ -149,11 +149,35 @@ export default function Footer() {
                   Abdara Road, near Excel Learners Academy, Peshawar
                 </span>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone size={18} className="shrink-0 text-primary-light" />
-                <a href="tel:+923078799996" className="hover:text-white transition-colors">
-                  +92 307 8799996
-                </a>
+              <li className="flex items-start gap-2">
+                <Phone size={18} className="shrink-0 text-primary-light mt-0.5" />
+                <span>
+                  <a
+                    href="tel:+92937864411"
+                    className="hover:text-white transition-colors"
+                  >
+                    +92 937 864411
+                  </a>
+                  <br />
+                  <span className="text-xs text-slate-500">
+                    Mardan campus landline
+                  </span>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone size={18} className="shrink-0 text-primary-light mt-0.5" />
+                <span>
+                  <a
+                    href="tel:+923078799996"
+                    className="hover:text-white transition-colors"
+                  >
+                    +92 307 8799996
+                  </a>
+                  <br />
+                  <span className="text-xs text-slate-500">
+                    Peshawar campus WhatsApp / helpline
+                  </span>
+                </span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={18} className="shrink-0 text-primary-light" />
