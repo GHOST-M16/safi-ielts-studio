@@ -11,13 +11,17 @@ const quickLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+type IconProps = {
+  size?: string | number;
+};
+
 type SocialLink = {
   href: string;
   label: string;
-  icon: ComponentType<{ size?: number }>;
+  icon: ComponentType<IconProps>;
 };
 
-function TikTokIcon({ size = 20 }: { size?: number }) {
+function TikTokIcon({ size = 20 }: IconProps) {
   return (
     <svg
       width={size}
